@@ -63,6 +63,30 @@ initBackgroundLayer(
 //-------------------------------------------------------------------------
 
 void
+setBackgroundColor(
+    BACKGROUND_LAYER_T *bg,
+    uint16_t colour)
+{
+    int result = 0;
+    VC_IMAGE_TYPE_T type = VC_IMAGE_RGBA16;
+
+    assert(bg != 0);
+
+    VC_RECT_T dst_rect;
+    vc_dispmanx_rect_set(&dst_rect, 0, 0, 1, 1);
+
+    /* colour is a 16 bit RGBA, 0x000F is opaque black */
+    result = vc_dispmanx_resource_write_data(bg->resource,
+                                             type,
+                                             sizeof(colour),
+                                             &colour,
+                                             &dst_rect);
+    assert(result == 0);
+}
+
+//-------------------------------------------------------------------------
+
+void
 addElementBackgroundLayer(
     BACKGROUND_LAYER_T *bg,
     DISPMANX_DISPLAY_HANDLE_T display,

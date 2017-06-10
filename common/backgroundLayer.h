@@ -50,6 +50,11 @@ initBackgroundLayer(
     int32_t layer);
 
 void
+setBackgroundColor(
+    BACKGROUND_LAYER_T *bg,
+    uint16_t colour);
+
+void
 addElementBackgroundLayer(
     BACKGROUND_LAYER_T *bg,
     DISPMANX_DISPLAY_HANDLE_T display,
