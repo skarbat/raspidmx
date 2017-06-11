@@ -1,3 +1,9 @@
+raspidmx (1.0-5) unstable; urgency=low
+
+  * Added API to set background color
+
+ -- Albert Casals <skarbat@gmail.com>  Sat, 10 Jun 2017 23:30:00 +0100
+
 raspidmx (1.0-4) unstable; urgency=low
 
   * Added missing assets for game
